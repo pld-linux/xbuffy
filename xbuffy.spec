@@ -2,11 +2,12 @@ Summary:	XBiff-type program. With XBuffy you can watch multiple mailboxes
 Summary(pl):	Program typu xbiff. Potrafi monitorowaæ jednocze¶nie kilka skrzynek pocztowych
 Name:		xbuffy
 Version:	3.3.bl.3
-Release:	1
+Release:	2
 License:	Free
 Group:		X11/Amusements
 Source0:	http://www.fiction.net/blong/programs/xbuffy/%{name}-%{version}.tar.gz
 Source1:	http://www.fiction.net/blong/programs/xbuffy/%{name}-%{version}.readme
+Patch0:	%{name}-rfc2047.patch
 URL:		http://www.fiction.net/blong/programs/#xbuffy
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -17,20 +18,23 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This is xbuffy, an X program designed to watch multiple mail folders 
-for new mail. This version supports mbox/mh/maildir.
+for new mail. This version supports mbox/mh/maildir and was patched to 
+properly handle rfc2047 compliant email headers. 
 
 This is a modified version of xbuffy 3.3 by Bill Pemberton (wfp5p@virginia.edu).
 
 %description -l pl
 Xbuffy jest programem typu xbiff dzia³ajacym w ¶rodowisku X Window,
 przeznaczonym do jednoczesnego monitorowania wielu skrzynek pocztowych.
-Ta wersja rozpoznaje skrzynki typu mbox, MH, mailDir.
+Ta wersja rozpoznaje skrzynki typu mbox, MH, mailDir oraz zosta³a 
+po³atana by prawid³owo obs³ugiwaæ nag³ówki zgodne z rfc2047.
 
 Jest to zmodyfikowana wersja programu xbuffy 3.3 
 napisanego przez Billa Pembertona (wfp5p@virginia.edu).
 
 %prep
 %setup -q
+%patch0 -p1
 cp %{SOURCE1} .
 head -n 30 xbuffy.c >LICENCE
 
