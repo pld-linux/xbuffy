@@ -27,7 +27,7 @@ przeznaczonym do jednoczesnego monitorowania wielu skrzynek pocztowych.
 Ta wersja rozpoznaje skrzynki typu mbox, MH, mailDir.
 
 Jest to zmodyfikowana wersja programu xbuffy 3.3 
-napisanego przez Bill'a Pembertona (wfp5p@virginia.edu).
+napisanego przez Billa Pembertona (wfp5p@virginia.edu).
 
 %prep
 %setup -q
