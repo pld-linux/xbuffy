@@ -26,7 +26,7 @@ properly handle rfc2047 compliant email headers.
 This is a modified version of xbuffy 3.3 by Bill Pemberton (wfp5p@virginia.edu).
 
 %description -l pl
-Xbuffy jest programem typu xbiff dzia³ajacym w ¶rodowisku X Window,
+Xbuffy jest programem typu xbiff dzia³aj±cym w ¶rodowisku X Window,
 przeznaczonym do jednoczesnego monitorowania wielu skrzynek pocztowych.
 Ta wersja rozpoznaje skrzynki typu mbox, MH, mailDir oraz zosta³a
 po³atana by prawid³owo obs³ugiwaæ nag³ówki zgodne z rfc2047.
