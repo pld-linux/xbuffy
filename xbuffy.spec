@@ -17,14 +17,14 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This is xbuffy, an X program designed to watch multiple mail folders 
-for new mail. This version supports mbox/mh/maildir and "nntp" folders.
+for new mail. This version supports mbox/mh/maildir.
 
 This is a modified version of xbuffy 3.3 by Bill Pemberton (wfp5p@virginia.edu).
 
 %description -l pl
 Xbuffy jest programem typu xbiff dzia³ajacym w ¶rodowisku X Window,
 przeznaczonym do jednoczesnego monitorowania wielu skrzynek pocztowych.
-Ta wersja rozpoznaje skrzynki typu mbox, MH, mailDir oraz "skrzynki" NNTP.
+Ta wersja rozpoznaje skrzynki typu mbox, MH, mailDir.
 
 Jest to zmodyfikowana wersja programu xbuffy 3.3 
 napisanego przez Bill'a Pembertona (wfp5p@virginia.edu).
