@@ -3,7 +3,7 @@ Summary(pl):	Program typu xbiff. Potrafi monitorowaæ jednocze¶nie kilka skrzynek
 Name:		xbuffy
 Version:	3.3.bl.3
 Release:	1
-License:	GPL
+License:	Free
 Group:		X11/Amusements
 Source0:	http://www.fiction.net/blong/programs/xbuffy/%{name}-%{version}.tar.gz
 Source1:	http://www.fiction.net/blong/programs/xbuffy/%{name}-%{version}.readme
@@ -32,6 +32,7 @@ napisanego przez Bill'a Pembertona (wfp5p@virginia.edu).
 %prep
 %setup -q
 cp %{SOURCE1} .
+head -n 30 xbuffy.c >LICENCE
 
 %build
 %configure2_13
@@ -47,6 +48,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc %{name}-%{version}.readme 
+%doc %{name}-%{version}.readme LICENCE 
 %{_mandir}/man1/xbuffy.1*
 %attr(755,root,root) %{_bindir}/xbuffy
