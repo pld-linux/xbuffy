@@ -1,0 +1,115 @@
+                                                         Brandon Long
+							 blong@fiction.net
+							 6/30/1998
+							 Version: 3.3.bl.3
+
+
+XBuffy - An Improved X Multibiff 
+================================
+
+This is xbuffy, an X program designed to watch multiple mail folders for
+new mail.  This version supports mbox/mh/maildir and "nntp" folders.
+
+This is a modified version of xbuffy 3.3 by Bill Pemberton (wfp5p@virginia.edu).
+
+Note that the rpm xbuffy-3.3-2 contains everything but the debian
+bugfixes and debian xbuffy-3.3-1 doesn't have the atime and mdir
+patches.
+
+To build, just type:
+  configure
+  make
+
+If you want to use nntp, use the --enable-nntp switch.  You might want
+to set a default server by using --enable-nntp=<server name>.
+The environment variable NNTPSERVER will always override the default.
+Future versions will probably allow you to set the server in the boxfile
+(after all, how else can you watch multiple news servers?)
+
+If you want a "nicer" look, you can try an alternate widget set.  Most
+non-linux people might want to try Motif, use the --with-motif option to
+configure.  If you have an alternative Athena widget set installed, you
+can use that.  Try --with-xaw3d, --with-xaw95 or --with-neXtaw.  If you
+have linked an alternative Athena widget set to the libXaw shared
+library, you don't need to specify a different set.
+
+This version also includes LINUX specific LED blinking support if you
+compile with --enable-led.  This compiles a separate program (led) which
+must be installed suid root to access the LINUX console driver.  Xbuffy
+will then recognize the boxfile command 'led' to blink one of the led's
+on the keyboard to announce new mail.  LED support was provided by
+Anders Johansson of Linköping University <andersjo@lysator.liu.se>.
+
+The standard thing to do is to create a boxfile (I usually use
+~/.xbuffy) and place in it commands to watch your mail folders.
+---- .xbuffy ------
+box /var/mail/blong
+title Incoming
+polltime 5
+headertime 0
+audio cat /Archive/multimedia/sound/au/glass.au > /dev/audio
+command xterm -fn 7x13 -title "Mutt Incoming" -e mutt &
+
+box ~/Mail/received
+title Received
+headertime 0
+command xterm -fn 7x13 -title "Mutt Received" -e mutt -f =received &
+
+box ~/Mail/mutt
+title Mutt 
+headertime 0
+polltime 15
+command xterm -fn 7x13 -title "Mutt Mutt" -e mutt -f =mutt &
+
+box comp.mail.elm
+newsbox
+polltime 100
+command xterm -fn 7x13 -title "Mutt comp.mail.elm" -e mutt -f "[news]comp.mail.elm" &
+---------------------
+
+Maildir/MH Notes:
+------------------
+You specify a maildir/mh folder by pointing "box" at the directory which
+is the folder.  
+
+Normally, you can pick whether to show only the new messages or all of
+the messages in the mailbox when you click the left button on the
+mailbox button.  With maildir/mh folders, you only get the new messages
+regardless of this setting.
+
+This version of xbuffy makes the same assumptions that Mutt does about
+these folders, namely that a Maildir folder is a directory with
+subdirectories of cur, tmp, and new.  An MH folder is a directory with a
+.xmhcache or .mh_sequences file in it.
+
+Version Notes
+--------------
+ Version 3.3.bl.3:
+  - Added support for LINUX console LED blinking on new mail from
+    Anders Johansson of Linköping University <andersjo@lysator.liu.se>.
+  - Improvements to configure script for finding weird install places
+    for X and Motif libraries.  If this doesn't find yours, you can
+    still specify it with --with-motif=/path/to/motif.  Please mail me
+    if you're system has it somewhere else.
+  - Use the debian Xresources (XBuffy.ad), they're nicer
+
+ Version 3.3.bl.2:
+  - Added support for autoconf configuration to replace Imake
+  - Suggestions/code from Ralf Hildebrandt (R.Hildebrandt@tu-bs.de)
+    - Make main() return an int to keep the Xserver from complaining 
+    - some platforms (HP-UX 9.x) don't have utimes(), now use substitute
+    - -center can cause coredump
+   
+ Version 3.3.bl.1:
+  - xbuffy.time.patch by David DeSimone (fox@convex.hp.com)
+    - no longer crashes if mailbox doesn't exist
+    - alignment code bug
+    - don't modify the access-time of mailboxes when checking them to
+      allow other biff's to notice new mail as well
+  - xbuffy.mdir.patch by Brandon Long (blong@fiction.net)
+    - adds support for mh and maildir folders
+  - xbuffy_3.3-1.diff debian patch by Joel Rosdahl
+    - fixes a typo in the NNTP support
+    - Removed a bit of NNTP correctness checking that caused problems
+    - init NNTP boxes the same way you init MAIL boxes
+
