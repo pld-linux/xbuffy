@@ -6,7 +6,9 @@ Release:	2
 License:	Free
 Group:		X11/Amusements
 Source0:	http://www.fiction.net/blong/programs/xbuffy/%{name}-%{version}.tar.gz
+# Source0-md5:	f4de2adc9d0b2327040e700e2fd25a42
 Source1:	http://www.fiction.net/blong/programs/xbuffy/%{name}-%{version}.readme
+# Source1-md5:	ab3857614cb235aeb8937ca46f3417ea
 Patch0:	%{name}-rfc2047.patch
 URL:		http://www.fiction.net/blong/programs/#xbuffy
 BuildRequires:	XFree86-devel
