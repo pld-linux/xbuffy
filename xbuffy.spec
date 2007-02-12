@@ -1,5 +1,5 @@
 Summary:	XBiff-type program. With XBuffy you can watch multiple mailboxes
-Summary(pl.UTF-8):   Program typu xbiff. Potrafi monitorować jednocześnie kilka skrzynek pocztowych
+Summary(pl.UTF-8):	Program typu xbiff. Potrafi monitorować jednocześnie kilka skrzynek pocztowych
 Name:		xbuffy
 Version:	3.3.bl.3
 Release:	2
