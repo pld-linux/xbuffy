@@ -1,5 +1,5 @@
 Summary:	XBiff-type program. With XBuffy you can watch multiple mailboxes
-Summary(pl):	Program typu xbiff. Potrafi monitorowaÊ jednocze∂nie kilka skrzynek pocztowych
+Summary(pl.UTF-8):   Program typu xbiff. Potrafi monitorowaƒá jednocze≈õnie kilka skrzynek pocztowych
 Name:		xbuffy
 Version:	3.3.bl.3
 Release:	2
@@ -25,11 +25,11 @@ properly handle rfc2047 compliant email headers.
 
 This is a modified version of xbuffy 3.3 by Bill Pemberton (wfp5p@virginia.edu).
 
-%description -l pl
-Xbuffy jest programem typu xbiff dzia≥aj±cym w ∂rodowisku X Window,
+%description -l pl.UTF-8
+Xbuffy jest programem typu xbiff dzia≈ÇajƒÖcym w ≈õrodowisku X Window,
 przeznaczonym do jednoczesnego monitorowania wielu skrzynek pocztowych.
-Ta wersja rozpoznaje skrzynki typu mbox, MH, mailDir oraz zosta≥a
-po≥atana by prawid≥owo obs≥ugiwaÊ nag≥Ûwki zgodne z rfc2047.
+Ta wersja rozpoznaje skrzynki typu mbox, MH, mailDir oraz zosta≈Ça
+po≈Çatana by prawid≈Çowo obs≈Çugiwaƒá nag≈Ç√≥wki zgodne z rfc2047.
 
 Jest to zmodyfikowana wersja programu xbuffy 3.3
 napisanego przez Billa Pembertona (wfp5p@virginia.edu).
