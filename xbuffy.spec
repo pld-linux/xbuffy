@@ -36,7 +36,7 @@ napisanego przez Billa Pembertona (wfp5p@virginia.edu).
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 cp %{SOURCE1} .
 head -n 30 xbuffy.c >LICENCE
 
